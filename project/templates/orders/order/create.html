@@ -1,0 +1,54 @@
+{% extends "shop/base.html" %}
+{% block title %}Checkout{% endblock %}
+
+
+{% block content %}
+
+<div class="moycontainer">
+    <div class="dannie">
+        <div class="dannie2">
+            <a href="{% url 'map' %}">карта</a>
+            <h1>Данные получателя</h1>
+            <div class="order-info">
+                <h3>Ваш заказ</h3>
+                <ul>
+                    {% for item in cart %}
+                        <li class="font-size18px">
+                            {{ item.quantity }} x {{ item.product.name }}
+                            <span>${{ item.total_price }}</span>
+                            <img class="mini_img" src="{{ item.product.image.url }}">
+                        </li>
+
+                    {% endfor %}
+                </ul>
+                <p>Total: {{ cart.get_total_price }}</p>
+            </div>
+            <form action="." method="post" class="order-form">
+                {% csrf_token %}
+                <div>
+                    <div>Имя</div>
+                    <input class="inp" type="text" name="first_name" maxlength="50" required id="id_first_name">
+                </div>
+                <div>
+                    <div>Фамилия</div>
+                    <input class="inp" type="text" name="last_name" maxlength="50" required id="id_last_name">
+                </div>
+                <div>
+                    <div>Номер телефона</div>
+                    <input class="inp" type="text" name="phone_number" maxlength="50" required id="id_phone_number">
+                </div>
+                <div>
+                    <div>Город/посёлок</div>
+                    <input class="inp" type="text" name=city" maxlength="50" required id="id_city">
+                </div>
+                <div>
+                    <div>Адрес</div>
+                    <input class="inp" type="text" name="address" maxlength="50" required id="id_address">
+                </div>
+                <input class="place_order" type="submit" value="Оформить заказ">
+            </form>
+        </div>
+    </div>
+    <div class="oplata">da</div>
+</div>
+{% endblock %}
