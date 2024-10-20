@@ -15,6 +15,9 @@ body {
 	color:#656565;
 	font-size: 1.4em;
 	background: #f5f5f5;
+	display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100%;
 }
 a {
     color: #10cdff;
@@ -269,12 +272,8 @@ header  .navbar-nav > li > a {
 	
 }
 .dishes{
-	
-background: #079cc3;
-	
-padding: 35px 0;
-	
-color: #1b1b1b;
+    background: #079cc3;
+    color: #1b1b1b;
 }
 .dropdown-menu li a:hover {
     color: #fff !important;
@@ -1406,6 +1405,8 @@ footer .widget .flickr_badge img {
 footer{
 	padding:50px 0 0 0;
 	color:#f8f8f8;
+	width: 100%;
+
 }
 
 footer a {
@@ -1617,7 +1618,17 @@ article img.pull-right, article .align-right{
 /*  Media queries 
 ============================= */
 
+@media (min-width: 980px) and (max-width: 1060px) {
+    .flex-caption h3 {
+        font-size: 56px;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 979px) {
+
+    .flex-caption h3 {
+        font-size: 42px;
+    }
 
 	a.detail{
 		background:none;
@@ -1650,6 +1661,11 @@ article img.pull-right, article .align-right{
 		margin:0 20px 0 0;
 	}	
 }
+@media (max-width: 560px) {
+    .flex-caption h3 {
+        font-size: 16px;
+    }
+}
 
 @media (max-width: 767px) {
 .navbar-default .navbar-collapse{border-color: none;/* background: #05142b; */}
@@ -1662,7 +1678,11 @@ border-color: rgba(255, 255, 255, 0.58);
 margin-top: 15px;
 }
 .flex-caption h3{
-	font-size:28px;
+	font-size:20px;
+}
+
+.flex-caption p {
+    font-size: 13px;
 }
   body {
     padding-right: 0;
@@ -1940,7 +1960,7 @@ span.color {
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 7vh;
+    margin-bottom: 30px;
 }
 
 
@@ -1991,13 +2011,13 @@ span.color {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    column-gap: 5px;
-    row-gap: 1px;
-    padding: 2px 0;
-    margin-bottom: 30px;
-    background-color: white;
+    column-gap: 4px;
+    row-gap: 4px;
+    padding: 3px 0;
+    margin-bottom: 20px;
+    background-image: linear-gradient(#2c3538, #2a3d42);
     width: 100%;
-    height: 300px;
+    /*height: 300px;*/
     border-radius: 60px;
     overflow: hidden;
 
@@ -2057,28 +2077,79 @@ span.color {
 }
 
 
+
 .moycontainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 
+    a {
+        width: 80%;
+    }
+
     .dannie {
-        width: 50%;
+        width: 40%;
+
+        .divdelivery {
+            display: flex;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #45a7c4;
+            padding-bottom: 30px;
+
+            &:hover {
+                color: #2baed6;
+                filter: drop-shadow(1px 1px 1px blue);
+                transition: 1s;
+            }
+
+            &:not(:hover) {
+                transition: 1s;
+            }
+        }
 
         .dannie2 {
-            width: 30%;
+            width: 70%;
             margin: auto;
         }
     }
 
     .oplata {
-        width: 50%;
+        width: 60%;
+
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+            color: #45a7c4;
+            font-size: 18px;
+        }
+
+        .map {
+            margin-top: 50px;
+            width: 84%;
+            height: 800px;
+            border: 2px solid black;
+        }
+
+        [class*="ground-pane"] {
+            filter: grayscale(1);
+        }
     }
 }
 
 .t1div {
-    margin-bottom: 110px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    align-items: center;
+    color: white;
+    padding: 30px;
 }
 
 .mini_img {
@@ -2098,30 +2169,7 @@ span.color {
     }
 }
 
-.buttonschecks {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 
-
-    label {
-        color: #fff;
-    }
-
-    .light {
-        background-image: linear-gradient(#30c3f0, #30a0f0);
-        border: 2px solid black;
-        color: white;
-        padding: 10px 15px;
-        border-radius: 20px;
-        font-size: 18px;
-
-        &:hover {
-            background-image: linear-gradient(#459fba, #417ec4);
-            text-decoration: none;
-        }
-    }
-}
 
 .about-logo {
     display: flex;
@@ -2148,6 +2196,8 @@ span.color {
 }
 
 .order-form {
+    width: 100%;
+    padding: 30px 0;
 
     div {
         div {
@@ -2176,23 +2226,47 @@ span.color {
     }
 }
 
+.divmain {
+    height: 100%;
+}
+
 .moycontainer2 {
-    margin-top: 50px;
+    .total_price {
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+
+        p {
+            font-size: 26px;
+            color: #10CDFF;
+            margin-left: 4px;
+        }
+    }
+}
+
+.moycontainer3 {
+    width: 100%;
 
     .buttonschecks {
+        width: 100%;
+        margin-top: 50px;
+        height: 100%;
+        display: inline-block;
         display: flex;
         justify-content: space-around;
         align-items: center;
 
         .light2 {
             width: 49.7%;
-            height: 300px;
+            height: 100%;
             border-radius: 30px;
             text-align: center;
             padding-top: 20px;
+            padding-bottom: 20px;
             text-decoration: none;
             font-size: 26px;
-            background: linear-gradient(grey, #f5f5f5 90%);
+            background: linear-gradient(grey, #181510 90%);
 
                 p {
                     padding-top: 20px;
@@ -2201,7 +2275,7 @@ span.color {
                 }
 
             &:hover {
-                background: linear-gradient(#181515, #f5f5f5 90%);
+                background: linear-gradient(#181515, #181520 90%);
                 color: white;
                 font-size: 30px;
                 transition: 3s;
@@ -2214,31 +2288,104 @@ span.color {
     }
 }
 
-.table {
-	width: 100%;
-	border: none;
-	margin-bottom: 20px;
-}
-.table thead tr th {
-	padding: 10px;
-	font-weight: 500;
-	font-size: 22px;
-	line-height: 20px;
-	text-align: left;
-	color: #444441;
-	border-top: 2px solid #716561;
-	border-bottom: 2px solid #716561;
-}
-.table tbody tr td {
-	padding: 10px;
-	font-size: 22px;
-	line-height: 20px;
-	vertical-align: center;
-	color: #444441;
-	border-top: 1px solid #716561;
+.buttonschecks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    label {
+        color: #fff;
+    }
+
+    .light {
+        background-image: linear-gradient(#30c3f0, #30a0f0);
+        border: 2px solid black;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 20px;
+        font-size: 18px;
+
+        &:hover {
+            background-image: linear-gradient(#459fba, #417ec4);
+            text-decoration: none;
+        }
+    }
 }
 
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+	justify-content: center;
+	display: flex;
+
+	.table_div {
+	    width: 90%;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .div {
+            width: 100%;
+            height: 105px;
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: no-wrap;
+            gap: 10px;
+
+            .td {
+                display: flex;
+                width: 9%;
+                text-decoration: none;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                font-size: 24px;
+               /* border-radius: 32px;
+                border: 1px solid black;
+                background-color: #bdbebf;*/
+
+            }
+
+            .td_a {
+                height: 100%;
+                text-decoration: none;
+                border-radius: 32px;
+                border: 1px solid black;
+                background-color: #bdbebf;
+                width: 90%;
+                display: grid;
+                grid-template-columns: 2fr 1fr 30px 1fr 1fr;
+
+                div {
+                    font-size: 24px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .img {
+                        width: 100px;
+                    }
+                }
+            }
+	    }
+	}
+}
 
 .bth:focus + .order-form {
     visibility: visible;
+}
+
+
+.divzakazdisplayproducts {
+    width: 100%;
+    padding: 2px 0;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    div {
+        font-size: 18px;
+    }
 }

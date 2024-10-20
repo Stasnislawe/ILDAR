@@ -20,10 +20,10 @@ class NewProductForm(forms.ModelForm):
         self.fields['description'].label = 'Описание'
         self.fields['image'].label = 'Изображение'
         self.fields['price'].label = 'Стоимость'
-        self.fields['stock'].label = 'Количество'
+        self.fields['quantity'].label = 'Количество'
         self.fields['available'].label = 'В наличии'
 
 
     class Meta:
         model = Product
-        fields = ('name', 'description', 'image', 'price', 'stock', 'available', 'slug')
+        fields = ('name', 'description', 'category', 'image', 'price', 'quantity', 'available', 'slug')

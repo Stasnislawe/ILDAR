@@ -3358,7 +3358,43 @@ input[type=range] + .thumb {
 
 @media only screen and (min-width: 601px) {
   .container {
-    width: 85%;
+    width: 100%;
+
+    .search {
+            .cart__form {
+                width: 20%;
+            }
+
+            .search__form {
+                .search__input {
+                    width: 55%;
+                }
+                .search__button {
+                    width: 15%;
+                }
+            }
+        }
+
+        .moycontainer {
+            padding: 5px 25px;
+
+            a {
+                width: 45%;
+
+                .card .card-content p {
+                    font-size: 9px;
+                }
+            }
+        }
+
+        .top__cat .cat__div {
+            width: 24.4%;
+
+            .span-title-cat {
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+        }
   }
 }
 
@@ -4607,9 +4643,18 @@ small {
 .card .card-image .card-title {
   color: #fff;
   position: absolute;
-  bottom: 0;
+  bottom: 16px;
   left: 0;
   padding: 20px;
+}
+
+.card .card-image .card-titleprice {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  font-size: 20px;
 }
 
 .card .card-content {

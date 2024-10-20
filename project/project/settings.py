@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
-    'easy_maps',
+    'django_filters',
     'shop',
     'cart',
     'orders',
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 CART_SESSION_ID = 'cart'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

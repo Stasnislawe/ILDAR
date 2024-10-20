@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="pageTitle">{{ product.name }}{{ product.pk }}</h2>
+				<h2 class="pageTitle">{{ product.name }}</h2>
 			</div>
 		</div>
 	</div>
@@ -15,6 +15,7 @@
 <section id="content">
 		<div class="container content">
         <!-- Service Blcoks -->
+
 
 						<div class="row">
 							<div class="col-md-12">
@@ -27,13 +28,10 @@
                                             <input class="light" type="submit" value="Add to cart">
                                         </form>
                                         <div class="cart__form"><a class="waves-effect waves-dark" href="{% url 'cart_detail' %}">Корзина {{ total_items }}{{ total_items|pluralize }}
-                                            ${{ cart.get_total_price }}</a></div>
+                                            {{ cart.get_total_price|currency }}</a></div>
                                     </div>
-									<p>{{ product.description }}</p>
 								</div>
-							</div>
-						</div>
-        <div class="row service-v1 margin-bottom-40">
+                                <div class="row service-v1 margin-bottom-40">
             <div class="col-md-4 md-margin-bottom-40">
 					<div class="card small">
                         <div class="card-image">
@@ -53,5 +51,8 @@
 
           </div>
         </div>
+                                <p>{{ product.description }}</p>
+							</div>
+						</div>
 </section>
 {% endblock content %}
