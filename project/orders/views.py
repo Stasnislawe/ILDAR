@@ -1,3 +1,4 @@
+from decimal import Decimal
 from django.shortcuts import render
 from .models import OrderItem, OrderItemWD
 from .forms import OrderCreateForm, WithoutDeliveryForm

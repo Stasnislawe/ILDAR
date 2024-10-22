@@ -1189,9 +1189,19 @@ pre code {
                 .table_div {
                     .div {
                         height: 70px;
+                        align-items: center;
 
                         .td {
-                            font-size: 14px;
+                            display: block;
+                              width: 24px;
+                              height: 24px;
+                              --weight: 3px;
+                              --aa: 1px; /* anti-aliasing */
+                              --color: grey;
+                              border-radius: 3px;
+                              background:
+                                linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa))),
+                                linear-gradient(-45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa)));
                         }
                         .td_a {
                             div {

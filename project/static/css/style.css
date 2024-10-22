@@ -2330,22 +2330,21 @@ span.color {
             width: 100%;
             height: 105px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             flex-wrap: no-wrap;
             gap: 10px;
 
             .td {
-                display: flex;
-                width: 9%;
-                text-decoration: none;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                font-size: 24px;
-               /* border-radius: 32px;
-                border: 1px solid black;
-                background-color: #bdbebf;*/
-
+                            display: block;
+                              width: 39px;
+                              height: 39px;
+                              --weight: 3px;
+                              --aa: 1px; /* anti-aliasing */
+                              --color: grey;
+                              border-radius: 3px;
+                              background:
+                                linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa))),
+                                linear-gradient(-45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa)));
             }
 
             .td_a {
