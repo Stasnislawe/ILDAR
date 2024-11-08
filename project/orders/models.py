@@ -1,11 +1,13 @@
+from django.contrib.auth.models import User
 from django.db import models
 from shop.models import Product
 
 
 class Order(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    # first_name = models.CharField(max_length=50)
+    # last_name = models.CharField(max_length=50)
     address = models.CharField(max_length=250)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
     phone_number = models.CharField(max_length=12)
     created = models.DateTimeField(auto_now_add=True)
     delivery_price = models.IntegerField()

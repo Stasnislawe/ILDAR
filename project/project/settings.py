@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 SITE_ID = 1
@@ -57,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -140,6 +144,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# EASY MAP MAIN SETTINGS
 EASY_MAPS_GOOGLE_KEY = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ___0123456789'
-
 EASY_MAPS_CENTER = (-41.3, 32)
+
+# ALLAUTH
+ACCOUNT_USERNAME_REQUIRED = True
+
+LOGIN_REDIRECT_URL = 'profile'
